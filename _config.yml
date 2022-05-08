@@ -1,0 +1,39 @@
+title: AdrianTayag
+author:  
+email:  
+description: >
+  A repository of personal thoughts, 
+  technical adventures, and everything else 
+  that I want to share to the strangers that
+  stumble upon this blog.
+
+remote_theme: aterenin/minima-reboot
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-redirect-from
+
+minima_reboot:
+  date_format: "%b %-d, %Y"
+  date_format_short: "%b %-d"
+
+header_pages:
+- about.md
+- posts.md
+- resume.md
+
+footer_icons:
+- username: AdrianTayag
+  url: https://github.com/adriantayag
+  icon: icon-github.svg
+
+paginate: 5
+
+markdown: kramdown
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - minima-reboot.gemspec
