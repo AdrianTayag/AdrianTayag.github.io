@@ -3,14 +3,14 @@ layout: post
 title: "Repair: Tough Mama NTMRF8"
 categories: teardown, repair
 ---
-![The fan](/assets/fan_teardown/Fan.png)
+![The fan](/assets/fan_teardown/overview.jpg)
 
 ### Portable Fan / Radio / Light / Powerbank 
 
-This multifunctional rechargeable fan has been pretty good. However, it's not able to charge and kept the battery drained recently. There were popping noises on the unit whenever I plug it in and there is certainly something wrong with it.
+This multifunctional rechargeable fan from Tough Mama has been pretty good. However, it's not able to charge and kept the battery drained recently. There were popping noises on the unit whenever I plug it in and there is certainly something wrong with it.
 
 ### Disassembly
-![Back cover removed](/assets/fan_teardown/overview.jpg)
+![Back cover removed](/assets/fan_teardown/boards.jpg)
 
 Disassembly was pretty easy but take note that the screws were treated with Loctite. A little bit of force is required to undo the seal but it is easier than undoing clips by prying.
 
