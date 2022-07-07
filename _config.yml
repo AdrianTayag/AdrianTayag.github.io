@@ -22,7 +22,6 @@ minima_reboot:
 header_pages:
 - about.md
 - posts.md
-- resume.md
 
 footer_icons:
 - username: AdrianTayag
