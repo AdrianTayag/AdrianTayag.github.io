@@ -27,8 +27,6 @@ footer_icons:
   url: https://github.com/adriantayag
   icon: icon-github.svg
 
-paginate: 5
-
 markdown: kramdown
 
 exclude:
