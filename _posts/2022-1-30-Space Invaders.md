@@ -3,7 +3,7 @@ layout: post
 title: "Unboxing: NMB Hi-Tek Keyboards"
 categories: unboxing, review
 ---
-![Overview](/assets/si_boards/overview.jpg)
+![Overview](/_assets/si_boards/overview.jpg)
 
 ### NMB Hi-Tek Keyboards
 
@@ -14,7 +14,7 @@ These keyboards (around 2000 pieces) were found in an abandoned warehouse. Lucki
 That was around June 2021. However, my opportunity to grab these keyboards came up last December 2021. The price shock caused by shipping fees from Germany to the Philippines really hurt the initial participants. In the end, slots were dropped and we were able to secure some of it.
 
 ### Overview
-![Top](/assets/si_boards/shipment.jpg)
+![Top](/_assets/si_boards/shipment.jpg)
 
 There are 2 kinds of keyboards with Space Invader switches namely: NMB RT8756CGR (Clicky) and Televideo 995-65 (Linear). 
 
@@ -24,23 +24,23 @@ Aside from the keyboard itself, it's interesting to look at how they pack these 
 
 Upon opening the box:
 
-![Packaging](/assets/si_boards/packaging.jpg)
+![Packaging](/_assets/si_boards/packaging.jpg)
 
 Getting to the keyboard:
 
-![Packaging](/assets/si_boards/packaging_2.jpg)
+![Packaging](/_assets/si_boards/packaging_2.jpg)
 
 ### Typing impressions
-![Clicky](/assets/si_boards/top.jpg)
+![Clicky](/_assets/si_boards/top.jpg)
 
 The clicky switches reminds me of my first custom keyboard with Kailh Box White switches as they both have 2 clicks per key press - one each for down and up stroke. The overall sound of the board is very satisfying for writing (I am actually using it to write this). Even the stabilizers sound nice. One minor issue would be the flex on the housing - it creaks whenever you push down on it.
 
-![Linear](/assets/si_boards/workspace.jpg)
+![Linear](/_assets/si_boards/workspace.jpg)
 
 The linear switches are also very nice. There is a bit of scratchiness to it if you are used to typing on lubed keyboards. Although I do think that they can be used as is. The build quality of this board is a lot better - it feels more substantial. Creaks are not an issue on this one.
 
 ### Disassembly
-![PCB](/assets/si_boards/disassembly.png)
+![PCB](/_assets/si_boards/disassembly.png)
 
 This section will only discuss the linear board as I was only able to open the linear board for some modifications. 
 
@@ -52,7 +52,7 @@ Quick takeaways:
 
 ### Modifications
 
-![Modifications](/assets/si_boards/modification.jpg)
+![Modifications](/_assets/si_boards/modification.jpg)
 
 Since the linear board has a non-standard signal (despite having a PS/2 connector) for transmitting to the computer, a converter was needed before I can use it. Thanks to hasu and TMK contributors for creating a mapping for this board - [link](https://github.com/tmk/tmk_keyboard)
 
