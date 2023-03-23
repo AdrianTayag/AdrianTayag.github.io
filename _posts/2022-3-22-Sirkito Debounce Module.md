@@ -3,29 +3,33 @@ layout: post
 title: "Unboxing: Sirkito Switch Debouncing Module"
 categories: unboxing, review
 ---
-![Overview](/assets/si_boards/overview.jpg)
+![Overview](/_assets/switch_debounce/product_shot1.png)
 
 ### History
 
-Lorem ipsum
+How Sirkito started based on a problem statement
 
 ### The business and technicals
-![Top](/assets/si_boards/shipment.jpg)
+![Goods](/_assets/switch_debounce/goods.png)
 
-Lorem ipsum
+Sourcing the items and pricing
+Determining the items to sell
 
 ### Starting out
-![Clicky](/assets/si_boards/top.jpg)
+![Poster](/_assets/switch_debounce/poster.png)
 
-Lorem ipsum
+Marketing through word of mouth
 
 ### Going further
-![PCB](/assets/si_boards/disassembly.png)
+![PCB](/_assets/switch_debounce/raw_pcb.png)
+![Module](/_assets/switch_debounce/product_shot2.png)
+![Schematic](/_assets/switch_debounce/pcb_schematic.png)
+![Board](/_assets/switch_debounce/pcb_routing.png)
+![Render](/_assets/switch_debounce/pcb_render.png)
 
-Lorem ipsum
+Creating in house modules as value add - to increase profit
+Offloading unused items
 
 ### Looking back
 
-![Modifications](/assets/si_boards/modification.jpg)
-
-Lorem ipsum
+Regrets? Learnings? etc.
