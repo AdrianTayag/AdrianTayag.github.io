@@ -13,7 +13,7 @@ This short writeup summarizes my experience in enabling bluetooth device pass th
 
 ### Pre-requisites
 
-1. WSL2 running on your device
+1. WSL2 running on your device (The steps are based on my experience with Ubuntu 22.04)
 2. USBIPD - [Link to repo](https://github.com/dorssel/usbipd-win)
 3. Supported bluetooth device (Tested on Intel AX200)
 4. Backup of your current WSL2 (Just in case things go wrong)
@@ -21,7 +21,7 @@ This short writeup summarizes my experience in enabling bluetooth device pass th
 ### Steps
 
 1. Update Kernel
-    Follow this guide until step 4, right before building the kernel (since we will need to modify the configurations before continuing)
+    Follow this [guide](https://learn.microsoft.com/en-us/community/content/wsl-user-msft-kernel-v6) given by Microsoft until step 4, right before building the kernel (since we will need to modify the configurations before continuing)
 2. Install bluetooth libraries via menuconfig
     > via your Terminal:
 
@@ -48,7 +48,7 @@ This short writeup summarizes my experience in enabling bluetooth device pass th
 3. Pass in bluetooth device
     > sudo apt update   
     > sudo apt install bluez dbus  
-    > echo 'export BLUETOOTH_ENABLED=1' | sudo tee /etc/default/bluetooth  
+    > echo export BLUETOOTH_ENABLED=1 | sudo tee /etc/default/bluetooth  
 
 4. Start bluetooth services
     > sudo service dbus start  
