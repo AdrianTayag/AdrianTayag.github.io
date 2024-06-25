@@ -1,69 +1,62 @@
 ---
 layout: post
-title: "Learn: Sharing Bluetooth devices for use inside WSL2"
-categories: guide, devtools
+title: "Repair: Kyowa KW-3631 Induction Cooker"
+categories: teardown, repair
 ---
-![Bluetooth_image](/assets/wsl2_bluetooth/DALL·E%202024-01-19%2021.29.54.png)
+![Induction_cooker](/assets/induction_cooker/Front.jpg)
 
-*Prompt: Bluetooth device connecting to computer cartoon style*
+### A decade old Induction Cooker
 
-### Introduction
+Recently, my induction cooker / stove suddenly stopped turning on. Possibly a sign to start writing a post on teardowns again.
 
-This short writeup summarizes my experience in enabling bluetooth device pass through for WSL2 usage. In the future, newer WSL kernels may support this feature out of the box and this guide may get outdated.
+This stove was bought around 2014-2015 for my college dorm use. Along with a rice cooker of the same brand - which I also still use to this day. 
 
-### Pre-requisites
+For readers' context, turning on the stove for cooking just requires a single press of the ON/OFF button.
 
-1. WSL2 running on your device
-2. USBIPD - [Link to repo](https://github.com/dorssel/usbipd-win)
-3. Supported bluetooth device (Tested on Intel AX200)
-4. Backup of your current WSL2 (Just in case things go wrong)
+This will immediately start heating your pan with a preset of "Chafing dish" and a temperature setting of 250 degrees Celsius. Afterwards, you'll be able to select your cooking presets, setup timers, and adjust the temperature.
 
-### Steps
+### Issue: Non-responsive to power button press
 
-1. Update Kernel
-    Follow this guide until step 4, right before building the kernel (since we will need to modify the configurations before continuing)
-2. Install bluetooth libraries via menuconfig
-    > via your Terminal:
+The issue is immediately apparent since the single button press to start cooking is now non-responsive. Thus rendering the user to be unable to use the stove in any way.
 
-    ![Menuconfig_entry](/assets/wsl2_bluetooth/menuconfig_entry.PNG)
+After checking the internet for similar issues, the common root cause is a defective ON/OFF button. Since this button serves as the only entry / exit to operate the machine, it is always pressed whenever the stove is used.
 
-    > Select Networking Support via pressing Enter:
+### The Teardown
 
-    ![Menuconfig_0](/assets/wsl2_bluetooth/menuconfig_0.PNG)
+![Back](/assets/induction_cooker/Back.jpg)
 
-    > Enable Bluetooth subsystem support via pressing Y:
+Since this is a home appliance without any water resistance ratings and minimal safety features, opening it up is just a matter of removing all the screws on the bottom side of the stove. Four screws are hidden inside the feet, but are also easily accessible by removing the rubber covering it.
 
-    ![Menuconfig_1](/assets/wsl2_bluetooth/menuconfig_1.PNG)
+![Top](/assets/induction_cooker/Top_side.jpg)
 
-    > Enable the relevant Bluetooth support as follows:
+The top part containing the UI, buttons, and cooking surface is pretty simple. The button board interfaces with the coil driver with a 5 pin JST connector
 
-    ![Menuconfig_2](/assets/wsl2_bluetooth/menuconfig_2.PNG)
+![Coil](/assets/induction_cooker/Coil_side.jpg)
 
-    > Go to Bluetooth device drivers (last entry) and enable the following:
+The bottom part contains the induction coil, the coil driver, and the cooling fan for the product. 
 
-    ![Menuconfig_3](/assets/wsl2_bluetooth/menuconfig_3.PNG)
+### The repair
 
-    > Continue following the Microsoft guide until the end. NOTE: Building the kernel will take a few minutes depending on your system. 
+![Coil](/assets/induction_cooker/Button_PCB_front.jpg)
 
-3. Pass in bluetooth device
-    > sudo apt update   
-    > sudo apt install bluez dbus  
-    > echo 'export BLUETOOTH_ENABLED=1' | sudo tee /etc/default/bluetooth  
+The tact switch for the ON/OFF button is located at the lower right of the PCB, which is mounted to the casing via screws. Probing the ON/OFF tact switch, it remained OPEN regardless of the switch state. 
 
-4. Start bluetooth services
-    > sudo service dbus start  
-    > sudo service bluetooth start  
-    > bluetoothctl  
-    > scan on  
+The single layer PCB utilizes through hole components (except for the single SMT IC part) which allows for very easy repairs. The repair is pretty straightforward. The manufacturer also opted to use a common tact switch dimension - which I have on hand as spares. 
 
-    ![bluetooth_usage](/assets/wsl2_bluetooth/bluetoothctl.PNG)
-5. Enjoy!
-    For my use case, I am using it to commission Matter devices via the [CHIP Tool](https://project-chip.github.io/connectedhomeip-doc/guides/chip_tool_guide.html).
+Aside from replacing the switch, the internals were also cleaned up. 
 
-    ![chip-tool](/assets/wsl2_bluetooth/chip-tool.PNG)
+### Interesting bits
 
-### Resources
+![LED_IC](/assets/induction_cooker/IC.jpg)
 
-- [Installing WSL2](https://learn.microsoft.com/en-us/windows/wsl/install)
-- [Updating Kernel to V6.X](https://learn.microsoft.com/en-us/community/content/wsl-user-msft-kernel-v6)
-- [Discussion on usb-ipd repo](https://github.com/dorssel/usbipd-win/discussions/310)
+Managing error codes + timer in led IC
+
+How did it manage to communicate with the coil driver with only 5 wires?
+
+Button matrix?
+
+### How induction cooking works
+
+### References
+
+[TM1668 LED Keypad driver datasheet](https://www.lcsc.com/datasheet/lcsc_datasheet_1809211425_TM-Shenzhen-Titan-Micro-Elec-TM1668_C50291.pdf)
